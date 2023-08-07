@@ -1,0 +1,263 @@
+{% extends 'teacher/index.html' %}
+{% load static %}
+
+{% block head %}
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{title}} | Quini Kindergarten </title>
+
+  
+  <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/owl.theme.default.min.css'  %}">
+  
+  <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %}">
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+
+
+
+   <!-- reference your installed Font Awesome Free package's files here -->
+
+     <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+  <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'css/base.css'  %}">
+<style>
+    .bread{
+       
+      background-image: url('{% static "images/display.jpg" %}') ;
+     
+  
+    }
+   
+</style>
+</head>
+{% endblock %}
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% block information %}
+<div class="container mt-5">
+  <h5 class="fs-3">Class rooms</h5>
+  <p class="lead">Qilin Kindergarten's Class rooms.</p>
+  <hr style="color:red;">
+  <div class="owl-carousel owl-theme">
+
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_class1.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin Kindergarten class room</h5>
+          <small>this is one of the esteemed classes at Qilin Kindergarten</small>
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_class2.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin Kindergarten class room</h5>
+          <small>this is one of the esteemed classes at Qilin Kindergarten</small>
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_class3.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin Kindergarten class room</h5>
+          <small>this is one of the esteemed classes at Qilin Kindergarten</small>
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_class4.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin Kindergarten class room</h5>
+          <small>this is one of the esteemed classes at Qilin Kindergarten</small>
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_class5.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin Kindergarten class room </h5>
+          <small>this is one of the esteemed classes at Qilin Kindergarten</small>
+            </div>
+      </div>
+    </div>
+    <!---->
+
+  </div>
+</div>
+<!-- class room ends here-->
+
+<div class="container mt-5">
+  <h5 class="fs-3">Student's Activities</h5>
+  <p class="lead">Qilin Kindergarten's Students.</p>
+  <hr style="color:red;">
+  <div class="owl-carousel owl-theme">
+
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_student1.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin's Students</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_student2.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin's Students</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_student3.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin's Students</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_student4.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin's Students</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_student5.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Qilin's Students</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+
+  </div>
+</div>
+<!--student's activities  ends here -->
+
+<div class="container mt-5">
+  <h5 class="fs-3">Student's Playground</h5>
+  <p class="lead">Qilin Kindergarten's Playground.</p>
+  <hr style="color:red;">
+  <div class="owl-carousel owl-theme">
+
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_play.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Image title</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_play7.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Image title</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_play5.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Image title</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_play3.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Image title</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+    
+    <div class="ms-2 me-2">
+      <div class="card">
+        <img src="{% static 'images/gallery_play4.jpg' %}" alt="" class="card-img-top">
+        <div class="card-body">
+          <h5 class="class-title">Image title</h5>
+          Description goes here 
+        </div>
+      </div>
+    </div>
+    <!---->
+
+  </div>
+</div>
+<script src="{% static  'js/jquery.js' %}"></script>
+<script src="{% static  'js/owl.carousel.min.js'  %}"></script>
+
+<script src="{% static  'js/owl.js' %}"></script>
+<script>
+ 
+</script>
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+{% endblock %}

@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html>
+<head>
+  {% load static %}
+  <!-- Standard Meta -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <link rel = "icon" href="{% static 'images/Q-removebg.png' %}" type = "image/x-icon">
+  <!-- Site Properties -->
+  <title>Dashboard | Qilin Kindergarten</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/reset.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/site.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/container.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/grid.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/header.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/image.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/menu.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/divider.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/dropdown.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static  'dashboard/dist/components/segment.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/button.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/list.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/icon.css' %}">
+  <link rel="stylesheet" type="text/css" href="{%  static 'dashboard/dist/components/sidebar.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/dist/components/transition.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'dashboard/css/style.css' %}">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/base.css'  %}">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+   
+    
+<link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+<link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+
+{% if request.user.is_authenticated and request.user.is_superuser %}
+  <style type="text/css">
+
+    .hidden.menu {
+      display: none;
+    }
+
+    .masthead.segment {
+      min-height: 700px;
+      padding: 1em 0em;
+    }
+    .masthead .logo.item img {
+      margin-right: 1em;
+    }
+    .masthead .ui.menu .ui.button {
+      margin-left: 0.5em;
+    }
+    .masthead h1.ui.header {
+      margin-top: 3em;
+      margin-bottom: 0em;
+      font-size: 4em;
+      font-weight: normal;
+    }
+    .masthead h2 {
+      font-size: 1.7em;
+      font-weight: normal;
+    }
+
+    .ui.vertical.stripe {
+      padding: 8em 0em;
+    }
+    .ui.vertical.stripe h3 {
+      font-size: 2em;
+    }
+    .ui.vertical.stripe .button + h3,
+    .ui.vertical.stripe p + h3 {
+      margin-top: 3em;
+    }
+    .ui.vertical.stripe .floated.image {
+      clear: both;
+    }
+    .ui.vertical.stripe p {
+      font-size: 1.33em;
+    }
+    .ui.vertical.stripe .horizontal.divider {
+      margin: 3em 0em;
+    }
+
+    .quote.stripe.segment {
+      padding: 0em;
+    }
+    .quote.stripe.segment .grid .column {
+      padding-top: 5em;
+      padding-bottom: 5em;
+    }
+
+    .footer.segment {
+      padding: 5em 0em;
+    }
+
+    .secondary.pointing.menu .toc.item {
+      display: none;
+    }
+
+    @media only screen and (max-width: 700px) {
+      .ui.fixed.menu {
+        display: none !important;
+      }
+      .secondary.pointing.menu .item,
+      .secondary.pointing.menu .menu {
+        display: none;
+      }
+      .secondary.pointing.menu .toc.item {
+        display: block;
+      }
+      .masthead.segment {
+        min-height: 350px;
+      }
+      .masthead h1.ui.header {
+        font-size: 2em;
+        margin-top: 1.5em;
+      }
+      .masthead h2 {
+        margin-top: 0.5em;
+        font-size: 1.5em;
+      }
+    }
+
+
+  </style>
+ <script src="{% static 'js/javascript.js' %}"></script>
+  <script src="{% static 'dashboard/assets/library/jquery.min.js' %}"></script>
+  <script src="{% static 'dashboard/dist/components/visibility.js' %}"></script>
+  <script src="{% static 'dashboard/dist/components/sidebar.js' %}"></script>
+  <script src="{% static 'dashboard/dist/components/transition.js' %}"></script>
+  <script src="{% static 'js/semantic.min.js' %}"></script>
+  <script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  <script>
+$(document)
+.ready(function() {
+
+  // fix menu when passed
+  $('.masthead')
+    .visibility({
+      once: false,
+      onBottomPassed: function() {
+        $('.fixed.menu').transition('fade in');
+      },
+      onBottomPassedReverse: function() {
+        $('.fixed.menu').transition('fade out');
+      }
+    });
+    $('.main').click(function(){
+
+      $('.ui.labeled.icon.sidebar')
+.sidebar('toggle')
+;
+});
+$('.menu .item').tab();
+
+$('.moda').click(function(){
+$('.ui.modal')
+.modal('show')
+;
+});
+
+$(".menu-item").hide();
+$("#icon").click(function(){
+$(".menu-item").slideToggle(500);
+});     
+
+$(".menu-admin").hide();
+$("#admin").click(function(){
+$(".menu-admin").slideToggle(500);
+}); 
+
+$(".menu-template").hide();
+$("#template").click(function(){
+$(".menu-template").slideToggle(500);
+}); 
+
+$(".menu-office").hide();
+$("#office").click(function(){
+$(".menu-office").slideToggle(500);
+}); 
+
+$(".menu-human").hide();
+$("#human").click(function(){
+$(".menu-human").slideToggle(500);
+});
+
+$(".menu-leave").hide();
+$("#leave").click(function(){
+$(".menu-leave").slideToggle(500);
+});
+
+$(".menu-section").hide();
+$("#section").click(function(){
+$(".menu-section").slideToggle(500);
+});
+
+$(".menu-subject").hide();
+$("#subject").click(function(){
+$(".menu-subject").slideToggle(500);
+});
+
+$(".menu-syllabus").hide();
+$("#syllabus").click(function(){
+$(".menu-syllabus").slideToggle(500);
+});
+
+$(".menu-material").hide();
+$("#material").click(function(){
+$(".menu-material").slideToggle(500);
+});
+
+$(".menu-routine").hide();
+$("#routine").click(function(){
+$(".menu-routine").slideToggle(500);
+});
+
+$(".menu-student").hide();
+$("#student").click(function(){
+$(".menu-student").slideToggle(500);
+});
+
+$(".menu-card").hide();
+$("#card").click(function(){
+$(".menu-card").slideToggle(500);
+});
+
+$(".menu-attendance").hide();
+$("#attendance").click(function(){
+$(".menu-attendance").slideToggle(500);
+});
+
+$(".menu-assignment").hide();
+$("#assignment").click(function(){
+$(".menu-assignment").slideToggle(500);
+});
+
+$(".menu-exam").hide();
+$("#exam").click(function(){
+$(".menu-exam").slideToggle(500);
+});
+
+$(".menu-schedule").hide();
+$("#schedule").click(function(){
+$(".menu-schedule").slideToggle(500);
+});
+
+$(".suggestion").hide();
+$("#suggestion").click(function(){
+$(".menu-suggestion").slideToggle(500);
+});
+
+$(".menu-mark").hide();
+$("#mark").click(function(){
+$(".menu-mark").slideToggle(500);
+});
+
+$(".menu-certificate").hide();
+$("#certificate").click(function(){
+$(".menu-certificate").slideToggle(500);
+});
+
+$(".menu-book").hide();
+$("#book").click(function(){
+$(".menu-book").slideToggle(500);
+});
+
+$(".menu-bus").hide();
+$("#bus").click(function(){
+$(".menu-bus").slideToggle(500);
+});
+
+
+$(".menu-hostel").hide();
+$("#hostel").click(function(){
+$(".menu-hostel").slideToggle(500);
+});
+
+
+$(".menu-envelope").hide();
+$("#envelope").click(function(){
+$(".menu-envelope").slideToggle(500);
+});
+
+
+$(".menu-comment").hide();
+$("#comment").click(function(){
+$(".menu-comment").slideToggle(500);
+});
+
+
+
+$(".menu-news").hide();
+$("#news").click(function(){
+$(".menu-news").slideToggle(500);
+});
+
+
+
+$(".menu-payroll").hide();
+$("#payroll").click(function(){
+$(".menu-payroll").slideToggle(500);
+});
+
+
+
+$(".menu-account").hide();
+$("#account").click(function(){
+$(".menu-account").slideToggle(500);
+});
+
+
+
+$(".menu-report").hide();
+$("#report").click(function(){
+$(".menu-report").slideToggle(500);
+});
+
+
+$(".menu-gallery").hide();
+$("#gallery").click(function(){
+$(".menu-gallery").slideToggle(500);
+});
+
+$(".menu-frontend").hide();
+$("#frontend").click(function(){
+$(".menu-frontend").slideToggle(500);
+});
+
+$(".menu-profile").hide();
+$("#profile").click(function(){
+$(".menu-profile").slideToggle(500);
+});
+
+
+
+});
+ 
+  
+  </script>
+
+  
+<script>
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+function drawChart() {
+var data = google.visualization.arrayToDataTable([
+  ['Class Stats', 'Mhl'],
+  ['Class Class 1',25],
+  ['Class Class 2',75],
+ 
+]);
+
+var options = {
+  title:'Class Statistics',
+  is3D:true
+};
+
+var chart = new google.visualization.PieChart(document.getElementById('myChart'));
+  chart.draw(data, options);
+}
+</script>
+
+</head>
+<body>
+
+<!-- Following Menu -->
+{% block menu %}
+<div class="ui top attached demo menu  bg-transparent">
+  <a class="item main bg-transparent">
+    <i class="sidebar icon"></i>
+    Menu
+  </a>
+  <a  class="item" href="{% url 'dashboard' %}">
+ Dashboard
+  </a>
+<a class="item" href="{% url 'teacher_dashboard' %}">
+  Teacher
+</a>
+
+
+<a href="{% url 'base' %}" class="item">
+  <i class="globe icon"></i>
+</a>
+</div>
+<div class="ui bottom attached segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu" >
+    <div class="ui item">
+      <a id="icon-dashboard" class=" text-decoration-none"> <i class="boxes icon fs-6"></i>Dashboard
+       
+       </a>
+       
+     </div>
+  
+    <div class="ui dropdown item">
+     <a id="icon"> <i class="wrench icon fs-6"></i> Settings
+      <i class="dropdown icon"></i>
+      </a>
+      <div class="menu-item">
+        <a class="item  fs-6">General Settings</a>
+        <a class="item fs-6">Payment Settings</a>
+        <a class="item fs-6">Sms Settings</a>
+        <a class="item fs-6">Email Settings</a>
+      </div>
+    </div>
+
+    <div class="ui dropdown item">
+      <a id="icon"> <i class="smile icon fs-6"></i> Theme
+       
+       </a>
+       
+     </div>
+   
+    <div class="ui dropdown item">
+      <a id="icon"> <i class="assistive listening systems icon fs-6"></i> Language
+       
+       </a>
+       
+     </div>
+  
+    <div class="ui dropdown item">
+      <a  id="admin"><i class="user icon fs-6"></i>
+        Administrator
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-admin">
+         <a class="item  fs-6">Academic Year</a>
+         <a class="item fs-6">User Role (ACL)</a>
+         <a class="item fs-6">Role Permission (ACL)</a>
+         <a class="item fs-6">Manage User</a>
+         <a class="item fs-6">Reset User Password</a>
+         <a class="item fs-6">User Credentialss</a>
+         <a class="item fs-6">Reset User Email</a>
+         <a class="item fs-6">Activity Log</a>
+         <a class="item fs-6">Publish Guardian Feedback</a>
+         <a class="item fs-6">Backup Database</a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="template"><i class="tag icon"></i>
+        Template
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-template">
+         <a class="item fs-6">Email Template</a>
+         <a class="item fs-6">Sms Template</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a  id="office"><i class="tty icon  fs-6"></i>
+        Front Office
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-office">
+         <a class="item fs-6">Visitor Purpose</a>
+         <a class="item fs-6">Visitor Info</a>
+         <a class="item fs-6">Call Log</a>
+         <a class="item fs-6">Postal Dispatched</a>
+         <a class="item fs-6">Postal Received</a>
+        
+       </div>
+     </div>
+
+     <div class="ui dropdown item">
+      <a id="human"><i class="user outline icon fs-6"></i>
+        Human Resources
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-human">
+         <a class="item fs-6">Manage Designation</a>
+         <a class="item fs-6">Manage Employee</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="leave"><i class="sign out alternate icon  fs-6"></i>
+        Leave
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-leave">
+         <a class="item fs-6">Manage Designation</a>
+         <a class="item fs-6">Manage Employee</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon" class="text-decoration-none" href="{% url 'teacher_dashboard' %}"> <i class="users icon fs-6"></i> Teachers
+       
+       </a>
+       
+     </div>
+     <div class="ui item">
+      <a id="icon-dashboard"> <i class="boxes icon fs-6"></i>Class
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="section"><i class=" bars icon  fs-6"></i>
+        Section
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-section">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="subject"><i class=" folder open icon  fs-6"></i>
+        Subject
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-subject">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="syllabus"><i class=" bars icon  fs-6"></i>
+        Syllabus
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-syllabus">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="material"><i class=" bars icon  fs-6"></i>
+        Material
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-material">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="routine"><i class=" bars icon  fs-6"></i>
+        Class Routine
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-routine">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="users icon fs-6"></i> Guardian
+       
+       </a>
+       
+     </div>
+  
+     <div class="ui dropdown item">
+      <a id="student"><i class="users icon  fs-6"></i>
+        Student
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-student">
+         <a class="item fs-6">Student Type</a>
+         <a class="item fs-6">Student Group</a>
+         <a class="item fs-6">Manage Student</a>
+         <a class="item fs-6">Admit Student</a>
+         <a class="item fs-6">Advanced Admission</a>
+         <a class="item fs-6">Bulk Admission</a>
+        
+        
+       </div>
+     </div>
+    
+     <div class="ui dropdown item">
+      <a id="card"><i class="id card icon  fs-6"></i>
+        Generate ID Card
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-card">
+         <a class="item fs-6">ID Card Settings</a>
+         <a class="item fs-6">Teacher ID Settings</a>
+         <a class="item fs-6">Employee ID Card</a>
+         <a class="item fs-6">Student ID Card</a>
+         <a class="item fs-6">Admit Card Settings</a>
+         <a class="item fs-6">Student Admit Card</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="attendance"><i class="id card icon  fs-6"></i>
+       Attendance
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-attendance">
+         <a class="item fs-6">Student Attendance</a>
+         <a class="item fs-6">Teacher Attendance</a>
+         <a class="item fs-6">Employee Attendance</a>
+         <a class="item fs-6">Absent Email</a>
+         <a class="item fs-6">Absent Sms</a>
+       
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="assignment"><i class="id card icon  fs-6"></i>
+    Assignment
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-assignment">
+         <a class="item fs-6">Student Attendance</a>
+         <a class="item fs-6">Teacher Attendance</a>
+        
+       
+        
+        
+       </div>
+     </div>
+
+
+
+     <div class="ui dropdown item">
+      <a id="exam"><i class="id card icon  fs-6"></i>
+    Exam
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-exam">
+         <a class="item fs-6">Exam Grade </a>
+         <a class="item fs-6">Exam Term</a>
+    
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="schedule"><i class="id card icon  fs-6"></i>
+    Exam Schedule
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-schedule">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+    
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="suggestion"><i class="id card icon  fs-6"></i>
+  Exam Suggestion
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-suggestion">
+        <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+       
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="mark"><i class="id card icon  fs-6"></i>
+  Exam Mark
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-mark">
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+      
+       </div>
+     </div>
+     <div class="ui item">
+      <a id="icon-share"> <i class="share icon fs-6"></i>Class
+       
+       </a>
+       </div>
+       <div class="ui dropdown item">
+        <a id="certificate"><i class="certificate icon  fs-6"></i>
+   Certificate
+         <i class="dropdown icon"></i>
+         </a>
+         <div class="menu-certificate">
+          <a class="item fs-6">Certificate Type </a>
+           <a class="item fs-6">Generate Certificate</a>
+          
+        
+         </div>
+       </div>
+       <div class="ui dropdown item">
+        <a id="book"><i class="book icon  fs-6"></i>
+   Library
+         <i class="dropdown icon"></i>
+         </a>
+         <div class="menu-book">
+          <a class="item fs-6">Book </a>
+           <a class="item fs-6">Library Member</a>
+           <a class="item fs-6">Issue and Return </a>
+           <a class="item fs-6">E-book</a>
+          
+        
+         </div>
+       </div>
+    </a>
+    <div class="ui dropdown item">
+      <a id="bus"><i class="bus icon  fs-6"></i>
+ Transport
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-bus">
+        <a class="item fs-6">Vehicle </a>
+         <a class="item fs-6">Manage Route</a>
+         <a class="item fs-6">Transport Member </a>
+     
+        
+      
+       </div>
+     </div>
+
+     <div class="ui dropdown item">
+      <a id="hostel"><i class="bed icon fs-6"></i>
+        Hostel
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-hostel">
+        <a class="item fs-6">Manage Hostel </a>
+         <a class="item fs-6">Manage Room</a>
+         <a class="item fs-6">Hostel Member </a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="envelope open outline icon fs-6"></i> Message
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="envelope"><i class="envelope icon fs-6"></i>
+        Mail & Sms 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-envelope">
+        <a class="item fs-6">General Email </a>
+         <a class="item fs-6">General Sms</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="comment"><i class="comment outline icon fs-6"></i>
+        Complain 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-comment">
+        <a class="item fs-6">Complain Type </a>
+         <a class="item fs-6">Complain</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="news"><i class="bullhorn icon fs-6"></i>
+        Announcement 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-news">
+        <a class="item fs-6">Notice  </a>
+         <a class="item fs-6">News</a>
+         <a class="item fs-6">Holiday</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="calendar check outline icon fs-6"></i>Events
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="payroll"><i class="money bill alternate icon fs-6"></i>
+        Payroll
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-payroll">
+        <a class="item fs-6">Salary Grade </a>
+         <a class="item fs-6">Salary Payment</a>
+         <a class="item fs-6">Payment History</a>
+        
+       </div>
+     </div>
+   
+     <div class="ui dropdown item">
+      <a id="account"><i class="money bill alternate icon fs-6"></i>
+        Accounting
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-account">
+        <a class="item fs-6">Discount </a>
+         <a class="item fs-6">Fee Type</a>
+         <a class="item fs-6">Fee Collection</a>
+         <a class="item fs-6">Manage Invoice </a>
+         <a class="item fs-6">Due Fee</a>
+         <a class="item fs-6">Print Multi Invoice</a>
+         <a class="item fs-6">Due Fee Email </a>
+         <a class="item fs-6">Due Fee Sms</a>
+         <a class="item fs-6">Income Head</a>
+         <a class="item fs-6">Income </a>
+         <a class="item fs-6">Expenditure Head</a>
+         <a class="item fs-6">Expenditure</a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="report"><i class="id card icon  fs-6"></i>
+  Report
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-report">
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+         <a class="item fs-6">Manage Mark </a>
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+      
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="gallery"><i class="tag icon"></i>
+        Media Gallery
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-gallery">
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="frontend"><i class="tag icon"></i>
+      Frontend
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-frontend">
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="profile"><i class="tag icon"></i>
+    Profile
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-profile">
+         <a class="item fs-6">Profile</a>
+         <a class="item fs-6">Reset Password</a>
+         <a class="item fs-6">Complain</a>
+         <a class="item fs-6">Leave</a>
+         <a class="item fs-6">Logout</a>
+        
+       </div>
+     </div>
+  </div>
+  {% block body %}
+  <div class="pusher">
+    <div class="ui basic segment">
+      <h3 class="ui header">Dashboard - Qilin Kindergarten</h3>
+      <div class="ui top attached tabular menu">
+        <a class="item active" data-tab="first">First</a>
+        <a class="item" data-tab="second">Second</a>
+     
+      </div>
+      <div class="ui bottom attached tab segment" style="width: fit-content;" data-tab="first">
+        <div class="container">
+         
+          <div class="row">
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="users icon text-purple"></i> Total Student</div>
+                  <div class="meta text-center fw-bold fs-5">0</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="users icon text-purple"></i> Total Guardian</div>
+                  <div class="meta text-center fw-bold fs-5">0</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="users icon text-purple"></i> Total Teacher</div>
+                  <div class="meta text-center fw-bold fs-5">{{teachers_no}}</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="users icon text-purple"></i> Total Employee</div>
+                  <div class="meta text-center fw-bold fs-5">5</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+
+            </div> 
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="yen sign icon text-purple"></i> Total Income</div>
+                  <div class="meta text-center fw-bold fs-5">0.00</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-sm ">
+              <div class="card p-3 shadow p-3 mb-5 bg-body rounded">
+                <div class="content">
+                  <div class="header text-center fs-6 fw-bold"><i class="yen sign icon text-purple"></i>Total Expenditure</div>
+                  <div class="meta text-center fw-bold fs-5">0.00</div>
+                  <div class="description text-center fs-6">
+                    January 2022 - December 2022
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          
+        </div>
+
+        <div class="ui stackable two column grid">
+
+         
+          <div class="column"><iframe src="https://calendar.google.com/calendar/embed?height=350&wkst=1&bgcolor=%23ffffff&ctz=Africa%2FAbidjan&showPrint=0&showTz=0&showCalendars=1&showTabs=1&showTitle=0" style="border-width:0" width="350" height="350" frameborder="0" scrolling="no"></iframe></div>
+          <div class="column">
+            <div id="myChart" style="width:100%; max-width:400px; height:400px;">
+            </div></div>
+           
+        </div>
+
+      </div>
+      <div class="ui bottom attached tab segment" data-tab="second">
+        <div class="container m-3">
+          <div class="row">
+            <div class="col-sm-6">
+            
+              <h5 class="header text-purple">Latest News
+              </h5> <hr class="text-purple">
+              <div class="ui celled list">
+                {% for news in news %}
+              <div class="item">
+                <img class="ui avatar image" src="{{news.image.url}}">
+                <div class="content">
+                  <div class="header lh-lg">{{news.title|truncatewords:"4"}}</div>
+         
+                </div>
+              </div>
+
+              {% endfor %}
+              
+            
+            </div></div>
+            <div class="col-sm-6 mt-3">
+              <h5 class="header text-purple">Latest Notice
+              </h5> <hr class="text-purple">
+            <div class="ui link list">
+              {% for notice in notice %}
+             
+            
+              <a class="item lh-lg ">{{notice.title}}</a>
+              {% endfor %}
+            </div>
+          </div>
+          </div>
+       
+        </div>
+      </div>
+      <div class="ui bottom attached tab segment active" data-tab="third">
+        <div class="ui three column stackable grid">
+          <div class="column">
+            <div class="ui raised segment">
+              <div class="ui placeholder">
+                <div class="image header">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                <div class="paragraph">
+                  <div class="medium line"></div>
+                  <div class="short line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui raised segment">
+              <div class="ui placeholder">
+                <div class="image header">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                <div class="paragraph">
+                  <div class="medium line"></div>
+                  <div class="short line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="ui raised segment">
+              <div class="ui placeholder">
+                <div class="image header">
+                  <div class="line"></div>
+                  <div class="line"></div>
+                </div>
+                <div class="paragraph">
+                  <div class="medium line"></div>
+                  <div class="short line"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  {% endblock %}
+</div>
+{% endblock %}
+
+{% else %}
+{% include 'dashboard/responsive.html' %}
+{%  endif %}
+</body>
+
+</html>

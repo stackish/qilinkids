@@ -1,0 +1,70 @@
+{% extends 'event/detail.html' %}
+
+
+{% block carousel %}
+<div class="container-fluid bread d-flex justify-content-center">
+    <div class="pb-2 pt-2" >
+    <h2 class=" text-white  text-capitalize  fw-bold text-decoration-underline display-1">{{title}}</h2>
+
+    <div class="ui massive breadcrumb ">
+        <a class="section text-white text-decoration-none" href="{% url 'base' %}">Home</a>
+        <i class="right chevron icon divider  text-white"></i>
+        <div class="active section text-white">{{title}}</div>
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block information %}
+
+<div class="container">
+
+  <h2 class="header text-center text-purple mt-5 fs-1 h1 ">AVAILABLE POSITIONS:</h2>
+  <hr>
+  <div class="ui list">
+    <div class="item">
+      <div class="header h3 text-purple">WHAT DO WE OFFER:</div> <br>
+      </div>
+{% for obj in object %}
+
+    <div class="item fs-5">
+     
+      {{obj.title_one}}
+    </div>
+    {% endfor %}
+<br>
+<hr>
+
+    <div class="item">
+      <div class="header h3 fs-5"> Academic Director</div> <br>
+
+        Minimum 5 years Kindergarten working experience and 1 year in Kindergarten management
+
+    </div>
+   
+
+    </div>
+  <p class="text-center"> Please apply with a resume, introduction and cover letter to<a href="mailto:webmaster@example.com" class="p-3">career@qilinkids.com</a> </p>
+
+  
+    
+    </div>
+  
+
+
+
+
+  
+
+
+
+
+{% endblock %}
+
+
+
+

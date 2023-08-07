@@ -1,0 +1,58 @@
+{% extends 'event/detail.html' %}
+
+
+{% block carousel %}
+<div class="container-fluid bread d-flex justify-content-center">
+    <div class="pb-2 pt-2" >
+    <h2 class=" text-white  text-capitalize  fw-bold text-decoration-underline display-1">{{title}}</h2>
+
+    <div class="ui massive breadcrumb ">
+        <a class="section text-white text-decoration-none" href="{% url 'base' %}">Home</a>
+        <i class="right chevron icon divider  text-white"></i>
+        <div class="active section text-white">{{title}}</div>
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block information %}
+
+<div class="container mt-5">
+  <div class="card text-center">
+    <div class="card-header">
+      Featured
+    </div>
+    {% for obj in about %}
+    <div class="card-body">
+      <h5 class="card-title">{{obj.title}}</h5>
+      {% autoescape off %}
+      <p class="card-text">{{obj.content}}</p>
+    {% endautoescape %}
+    </div>
+    <div class="card-footer text-muted">
+     Qilin Kindergarten
+     {% endfor %}
+    </div>
+ 
+  </div>
+    
+    </div>
+  
+
+
+
+
+  
+
+
+
+
+{% endblock %}
+
+
+
+

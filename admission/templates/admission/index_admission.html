@@ -1,0 +1,72 @@
+{% extends 'event/index.html' %}
+
+{% block information %}
+{% load bootstrap5 %}
+
+
+<div class="container mt-5">
+
+<div class="d-flex justify-content-center">
+    <h2 class="header h1"><strong>Qilin Kindergarten</strong></h2>
+</div><br>
+<p class="lead text-center">Qilin Kindergarten Hangzhou. <br> 44 Haier Ln, Hubin Business District Xiacheng District, Hangzhou, Zhejiang, China, 310006.</p>
+<p class="lead text-center">8617026810177</p>
+<p class="lead text-center">info@qilinkindergarten.com</p>
+
+<div class="d-flex justify-content-center">
+    <h2 class="header"><strong>Online Admission</strong></h2>
+</div>
+
+</div>
+
+</div>
+
+
+
+
+</div>
+<!---container ends here -->
+
+
+<div class="container mt-5">
+    <div class="row">
+
+        <div class="col-md-10 d-flex justify-content-center">
+          
+            <form  method="post" class="form">
+              {% csrf_token %}
+              {% bootstrap_form form %}
+              {% buttons %}
+                <button type="submit" class="btn btn-primary">
+                  Submit
+                </button>
+              {% endbuttons %}
+            </form>
+
+        </div>
+
+
+
+
+    </div>
+    
+
+    
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{%  endblock %}

@@ -1,0 +1,18 @@
+.round{
+    border-radius: 50%;
+  }
+
+
+.card-hover:hover{
+  color: aquamarine;
+}
+
+.card-img-top{
+  height: 40vh;
+  width:100%;
+  object-fit: cover;
+}
+
+.owl-theme, .owl-nav[class*="owl-"]:hover{
+  background: transparent;
+}

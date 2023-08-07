@@ -1,0 +1,22 @@
+{% extends 'dashboard/homepage.html' %}
+{% load static %}
+{% block body %}
+
+<div class="container  mt-5">
+ <h3 class="header fs-3 pb-3">Generate ID Card </h3><hr>
+    <div class="ui middle aligned divided list m-2">
+    {% for teacher in teachers %}
+        <div class="item">
+           
+          <img class="ui avatar image" src="{{teacher.avatar.url}}">
+          <div class="content">
+            <a class="header lh-lg">{{teacher.user.get_full_name}}</a>
+          </div>
+        </div>
+       
+    {% endfor %}  
+    </div>
+</div>
+
+
+{% endblock %}

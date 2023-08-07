@@ -1,0 +1,365 @@
+{% load static %}
+<!doctype html>
+<html class="no-js" lang="en">
+
+{% block head %}
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home page | Welcome</title>
+    <link rel = "icon" href="{% static 'images/Q-removebg.png' %}" type = "image/x-icon">
+    
+  
+    <link rel="stylesheet" href="http://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/semantic.min.css' %}">
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+   
+
+     <!-- reference your installed Font Awesome Free package's files here -->
+       
+       <link href="{% static 'fontawesomefree/css/all.min.css' %}" rel="stylesheet" type="text/css">
+
+   
+    
+    <link href="{% static 'fontawesomefree/css/fontawesome.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/brands.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'fontawesomefree/css/solid.css' %}" rel="stylesheet" type="text/css">
+  <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'css/base.css'  %}">
+
+<link rel="stylesheet" href="{% static 'css/loader.css'  %}">
+
+
+
+  </head>
+  {% endblock %}
+  <body>
+   
+
+<ul class="nav justify-content-center  nav-fill m-2">
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" class=" text-decoration-none ">Have you any question?</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"><i class="fa-solid fa-phone"></i> Call us :+8617026810177</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link"><i class="envelope icon"></i> Email us : info@qilinkids.com</li></a>
+    <a class="nav-link"><i class="envelope icon"></i> Email us : hello@qilinkids.com</li></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'admission' %}">Admission</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="{% url 'login' %}"><i class="sign in alternate icon"></i>Login</a>
+  </li>
+  
+</ul>
+
+
+   
+    <nav class="navbar navbar-expand-lg navbar-dark bg-purple sticky-md-top">
+      <div class="container">
+        <img class="mb-4 text-white" src="{% static 'images/q.svg' %}" alt="" width="72" height="57">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active fs-4" aria-current="page" href="{% url 'base' %}">Home</a>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fs-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Announcement
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'news' %}">News</a></li>
+                <li><a class="dropdown-item" href="{% url 'notice' %}">Notice</a></li>
+                
+                <li><a class="dropdown-item" href="{% url 'holiday' %}">Holiday</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="{% url 'event' %}">Event</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="{% url 'gallery' %}">Gallery</a>
+
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="{% url 'teacher' %}">Teacher</a>
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="{% url 'staff' %}">Staff</a>
+              
+            </li>
+            <li class="nav-item">
+              <a class="nav-link fs-4" href="{% url 'contact' %}">Contact Us</a>
+              
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle fs-4" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Page
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="{% url 'career' %}">Career</a></li>
+               
+              </ul>
+            </li>
+
+
+          </ul>
+         
+        </div>
+      </div>
+    </nav>
+  
+{% block carousel %}
+    <div class="container-fluid">
+      <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="{% static 'images/img.jpeg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="h4 fs-4 text-black">Welcome to </h5>
+              <p class="shadow h1">Qilin Kindergarten</p>
+              <a class="btn btn-primary" href="{% url 'admission' %}" role="button">Admission</a>
+            </div>
+          </div>
+
+
+          
+          <div class="carousel-item">
+            <img src="{% static 'images/img2.jpeg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="h4 fs-4 text-black">Welcome to </h5>
+              <p class="shadow h1">Qilin Kindergarten</p>
+              <a class="btn btn-primary" href="{% url 'admission' %}" role="button">Admission</a>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <img src="{% static 'images/img3.jpeg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+              <h5 class="h4 fs-4 text-black">Welcome to </h5>
+              <p class="shadow h1">Qilin Kindergarten</p>
+              <a class="btn btn-primary" href="{% url 'admission' %}" role="button">Admission</a>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+{% endblock %}
+
+{% block information %}
+    <div class="container">
+<div class="row  mt-5">
+  <div class="col-md-6 mb-2">
+    <div class="card border-0 ">
+    <div class="card-body">
+      <h5 class="card-title h1 "><b class="text-purple">Welcome to</b><br>
+        Qilin Kindergarten</h5>
+    
+      
+         {% autoescape off %}
+         
+      <p class="card-text ">Established in 2010, Qilin Kindergarten  have established 12 campuses in 8 cities in China ,including <b>Wenmiao Road kindergarten Shanghai, Guangzhou Gaolebao Kindergarten, Huxian Kindergarten Xi'an,  Suzhou Qingdeng Kindergarten,Beijing No. 4 Kindergarten.</b>. committed to creating outstanding global citizens who have the courage to  change and inspire through the k12 consistent education. </p>
+      {% endautoescape %}
+    
+    
+     
+    </div>
+  </div>
+</div>
+
+
+
+  <div class="col-md-6 mb-2">
+    <img src="{%  static 'images/home.jpg'%}" class="img-fluid " alt="...">
+
+  </div>
+</div>
+</div>
+{% endblock %}
+
+
+{% block facilities %}
+<div class="container-fluid ">
+  <h3 class="text-center display-3 mt-5">
+    Our 
+    <small class="text-purple">Facilities</small>
+  </h3>
+
+</div>
+
+<div class="container ">
+ 
+  <div class="row mt-4">
+    <div class="col-md-3 mb-4">
+      <div class="card d-flex justify-content-center  bg-purple card-hover pe-auto">
+      <div class="card-body d-flex justify-content-center">
+        <img src="{% static 'images/experience-teacher.png' %}" class="p-3 bg-white round" alt="..."></div>
+        <h4 class="text-center  text-white  h3" data-bs-toggle="tooltip" data-bs-placement="top" title="Our Teacher">Our Teacher</h4>
+     </div>
+  </div>
+
+
+    <div class="col-md-3 mb-4">
+  
+      <div class="card  d-flex justify-content-center bg-purple card-hover">
+        <div class="card-body d-flex justify-content-center">
+          <img src="{% static 'images/library.png' %}" class="p-2 bg-white round" alt="..."></div>
+          <h4 class="text-center text-white  h3"  data-bs-toggle="tooltip" data-bs-placement="top" title="Library">Library</h4>
+       </div>
+  
+  
+  </div>
+    <div class="col-md-3 mb-4">
+      <div class="card d-flex justify-content-center  bg-purple card-hover">
+        <div class="card-body d-flex justify-content-center">  <img src="{% static 'images/transport.png' %}" class="p-4 bg-white round" alt="..."></div>
+<h4 class="text-center  text-white  h3" data-bs-toggle="tooltip" data-bs-placement="top" title="Transport">Transport</h4>
+       
+
+       </div>
+
+    </div>
+
+    <div class="col-md-3 mb-4">
+
+      <div class="card d-flex justify-content-center bg-purple card-hover">
+        <div class="card-body d-flex justify-content-center ">
+         
+      <img src="{% static 'images/hostel.png' %}" class="p-3 bg-white round" alt="..."></div>
+          <h4 class="text-center text-white  h3" data-bs-toggle="tooltip" data-bs-placement="top" title="Hostel">Hostel</h4>
+       </div>
+
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
+{% block event %}
+<div class="container-fluid ">
+  <h3 class="text-center display-3 mt-5">
+    Latest 
+    <small class="text-purple">Event</small>
+  </h3>
+
+</div>
+
+   {% endblock %}
+
+
+
+{% block footer %}
+<div class="container-fluid navbar-dark bg-purple text-white mt-5">
+<div class="container p-3">
+  <div class="row">
+    <div class="col-sm-3 ">
+  <div class="ui small image p-3 text-white">
+  <img src="{% static 'images/q.svg' %}" class="text-white">
+  </div>
+    <p class="lead p-3">Established in 2010, Qilin Kindergarten have established 12 campuses in 8 cities in China ,including <br> <b>1. Wenmiao Road kindergarten Shanghai. <br> 2.Guangzhou Gaolebao Kindergarten.<br> 3.Huxian Kindergarten  Xi'an.<br> 4.Suzhou Qingdeng Kindergarten.<br>5.Beijing No. 4 Kindergarten.</b>. <br> committed to creating outstanding global citizens who have the courage to  change and inspire through the k12 consistent education.
+      Qilin Kindergarten students strive to excel in Chinese and English learning, creative thinking and character development with the purpose of serving the community
+    </p>
+    </div>
+    <div class="col-sm-3">
+    <h5 class="header h1">Quick link
+    </h5>
+    <hr>
+
+<ul class="link" style="list-style-type:none;">
+<li class="fs-4 text-white"><a class="text-white text-decoration-none " href="{% url 'admission' %}">Admission</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'news' %}">News</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'notice' %}">Notice</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'holiday' %}">Holiday</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'event' %}">Event</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'gallery' %}">Gallery</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'teacher' %}">Teacher</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="{% url 'staff' %}">Staff</a></li>
+<li class="fs-4"><a class="text-white text-decoration-none" href="#">Contact Us</a></li>
+</ul>
+
+    
+   
+    </div>
+    <div class="col-sm-3"><h5 class="header h1">Social Link
+    </h5>
+    <hr>
+  
+  
+  </div>
+    <div class="col-sm-3"><h5 class="header h1">Get in touch</h5>
+    <hr>
+    <div class="ui list">
+      
+      <div class="item fs-5 lh-lg"><i class="fa-solid fa-phone"></i> +8617026810177</div>
+      <hr>
+      <div class="item fs-5 lh=lg"><i class="envelope icon"></i> info@qilinkids.com<br><br>
+      hello@qilinkids.com</div>
+      <hr>
+      <h5  class="fs-5">Head Quarters</h5>
+      <div class="item fs-5 lh-lg"><i class="fa-solid fa-location-pin"></i> Qilin Kindergarten Hangzhou. <br> 44 Haier Ln, Hubin Business District Xiacheng District, Hangzhou, Zhejiang, China, 310006.</div>
+      <hr>
+      <h5  class="fs-5">Our Branches</h5>
+      <div class="item fs-5 lh-lg"><i class="fa-solid fa-location-pin"></i> Beijing No. 4 Kindergarten.</div>
+      <div class="item fs-5 1h-lg"><i class="fa-solid fa-location-pin"></i> Wenmiao Road kindergarten Shanghai.</div>
+      <div class="item fs-5 1h-lg"><i class="fa-solid fa-location-pin"></i> Guangzhou Gaolebao Kindergarten.</div>
+      <div class="item fs-5 1h-lg"><i class="fa-solid fa-location-pin"></i> Huxian Kindergarten Xi'an.</div>
+      <div class="item fs-5 1h-lg"><i class="fa-solid fa-location-pin"></i> Suzhou Qingdeng Kindergarten.</div>
+      <hr>
+    </div>
+    
+  </div>
+  </div>
+</div>
+
+  
+
+<script>
+  var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+</script>
+<script src="{% static 'fontawesomefree/js/all.min.js' %}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+
+ <!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="{% static 'js/semantic.min.js' %}"></script>
+<script src="{% static 'js/owl.js' %}"></script>
+<script>
+  $(document).foundation();
+</script>
+  
+  
+  </body>
+
+  {% endblock %}
+</html>
+
+
+

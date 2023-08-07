@@ -1,0 +1,66 @@
+{% extends 'event/index.html' %}
+
+
+
+{% block information %}
+<div class="container ">
+ 
+<div class="row">
+  {% if teachers %}
+  {% for teacher in teachers %}
+<div class="col-sm-6">
+  
+<div class="ui link cards m-5"> 
+<div class="card w-75">
+<div class="card-body">
+  <h5 class="card-title h3">{{teacher.title|title}}</h5>
+  <div class="content p-3">
+    <div class="meta p-2">
+      <a class="fs-6 text-decoration-none "><i class="fa-solid fa-user"></i> {{teacher.uploaded_by}} </a>
+      <a class="fs-6 text-decoration-none "><i class="fa-solid fa-calendar"></i> {{teacher.date}} </a> <br><br>
+      <a class="fs-6 text-decoration-none "><i class="fa-solid fa-user"></i> {{teacher.for_user}} </a>
+
+    </div>
+  </div>
+  <p class="card-text">{{teacher.description|truncatewords:"5"}}</p>
+  <a href="{% url 'notice-details' teacher.slug  %}" class="btn btn-primary ">Read More</a>
+</div>
+</div>
+   
+  
+ 
+</div>
+
+
+
+</div>
+{% endfor %}
+{% else %}
+
+<div class="col-sm-8 mt-5"> 
+  <div class="card text-center">
+  <div class="card-header">
+  Info
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">No Data</h5>
+    <p class="card-text">Please be informed there are no NOTICES now. Thanks</p>
+   
+  </div>
+ 
+</div></div>
+
+{% endif %}
+     
+  
+
+
+</div>
+
+</div>
+  
+
+  
+
+
+{% endblock %}

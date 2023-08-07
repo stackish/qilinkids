@@ -1,0 +1,62 @@
+{% extends 'teacher/index.html' %}
+
+{% block information %}
+<div class="container ">
+  {% if teachers %}
+<div class="ui link cards m-5">
+{% for teacher in teachers %}
+    <div class="card">
+      <div class="image">
+        <img src="{{teacher.images.url}}" class="card-img-top" alt=" ">
+      </div>
+      <div class="content p-3">
+        <div class="header ">{{teacher.title}}</div>
+        <div class="meta p-2">
+          <a class="fs-5 text-decoration-none"><i class="fa-solid fa-user"></i> {{teacher.users}}  (Event for)</a>
+        </div>
+       
+          <div class="meta p-2">
+          <a class="fs-5 text-decoration-none"><i class="fa-solid fa-calendar"></i> {{teacher.start_date}} (Start Date)</a>
+          </div>
+
+        <div class="meta p-2">
+           <a class="fs-5 text-decoration-none"><i class="fa-solid fa-calendar"></i> {{teacher.end_date}} (End Date)</a>
+        </div>
+         <div class="meta p-2">
+            <a class="fs-5 text-decoration-none"><i class="fa-solid fa-location-dot"></i>  {{teacher.location}}</a>
+          </div>
+      </div>
+      <div class="extra content">
+        <div class="center aligned author">
+     
+  <a href="{% url 'event-details' teacher.slug %}" class="text-decoration-none fs-5">More</a>
+ 
+
+    </div>
+
+
+      </div>
+    </div>
+    {% endfor %}
+   
+  </div>
+  {% else %}
+  
+  <div class="ui card mt-5">
+    <div class="content">
+      <div class="header">No Data</div>
+      <div class="meta">
+        <span>{{title}}</span>
+        <a>not avaliable</a>
+      </div>
+      <p></p>
+    </div>
+  </div>
+
+  <!--card ends here-->
+  
+  {% endif %}
+</div>
+
+
+{% endblock %}

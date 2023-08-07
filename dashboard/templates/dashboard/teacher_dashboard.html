@@ -1,0 +1,722 @@
+{% extends 'dashboard/homepage.html' %}
+{% load static %}
+
+{% block menu %}
+
+<div class="ui top attached demo menu  bg-transparent">
+  <a class="item main bg-transparent">
+    <i class="sidebar icon"></i>
+    Menu
+  </a>
+  <a  class="item" href="{% url 'dashboard' %}">
+ Dashboard
+  </a>
+<a class="item" href="{% url 'teacher_dashboard' %}">
+  Teacher
+</a>
+
+
+<a href="{% url 'base' %}" class="item">
+  <i class="globe icon"></i>
+</a>
+</div>
+<div class="ui bottom attached segment pushable">
+  <div class="ui inverted labeled icon left inline vertical sidebar menu" >
+    <div class="ui item">
+      <a id="icon-dashboard" class=" text-decoration-none"> <i class="boxes icon fs-6"></i>Dashboard
+       
+       </a>
+       
+     </div>
+  
+    <div class="ui dropdown item">
+     <a id="icon"> <i class="wrench icon fs-6"></i> Settings
+      <i class="dropdown icon"></i>
+      </a>
+      <div class="menu-item">
+        <a class="item  fs-6">General Settings</a>
+        <a class="item fs-6">Payment Settings</a>
+        <a class="item fs-6">Sms Settings</a>
+        <a class="item fs-6">Email Settings</a>
+      </div>
+    </div>
+
+    <div class="ui dropdown item">
+      <a id="icon"> <i class="smile icon fs-6"></i> Theme
+       
+       </a>
+       
+     </div>
+   
+    <div class="ui dropdown item">
+      <a id="icon"> <i class="assistive listening systems icon fs-6"></i> Language
+       
+       </a>
+       
+     </div>
+  
+    <div class="ui dropdown item">
+      <a  id="admin"><i class="user icon fs-6"></i>
+        Administrator
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-admin">
+         <a class="item  fs-6">Academic Year</a>
+         <a class="item fs-6">User Role (ACL)</a>
+         <a class="item fs-6">Role Permission (ACL)</a>
+         <a class="item fs-6">Manage User</a>
+         <a class="item fs-6">Reset User Password</a>
+         <a class="item fs-6">User Credentialss</a>
+         <a class="item fs-6">Reset User Email</a>
+         <a class="item fs-6">Activity Log</a>
+         <a class="item fs-6">Publish Guardian Feedback</a>
+         <a class="item fs-6">Backup Database</a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="template"><i class="tag icon"></i>
+        Template
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-template">
+         <a class="item fs-6">Email Template</a>
+         <a class="item fs-6">Sms Template</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a  id="office"><i class="tty icon  fs-6"></i>
+        Front Office
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-office">
+         <a class="item fs-6">Visitor Purpose</a>
+         <a class="item fs-6">Visitor Info</a>
+         <a class="item fs-6">Call Log</a>
+         <a class="item fs-6">Postal Dispatched</a>
+         <a class="item fs-6">Postal Received</a>
+        
+       </div>
+     </div>
+
+     <div class="ui dropdown item">
+      <a id="human"><i class="user outline icon fs-6"></i>
+        Human Resources
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-human">
+         <a class="item fs-6">Manage Designation</a>
+         <a class="item fs-6">Manage Employee</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="leave"><i class="sign out alternate icon  fs-6"></i>
+        Leave
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-leave">
+         <a class="item fs-6">Manage Designation</a>
+         <a class="item fs-6">Manage Employee</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon" class="text-decoration-none" href="{% url 'teacher_dashboard' %}"> <i class="users icon fs-6"></i> Teachers
+       
+       </a>
+       
+     </div>
+     <div class="ui item">
+      <a id="icon-dashboard"> <i class="boxes icon fs-6"></i>Class
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="section"><i class=" bars icon  fs-6"></i>
+        Section
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-section">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="subject"><i class=" folder open icon  fs-6"></i>
+        Subject
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-subject">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="syllabus"><i class=" bars icon  fs-6"></i>
+        Syllabus
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-syllabus">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="material"><i class=" bars icon  fs-6"></i>
+        Material
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-material">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="routine"><i class=" bars icon  fs-6"></i>
+        Class Routine
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-routine">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="users icon fs-6"></i> Guardian
+       
+       </a>
+       
+     </div>
+  
+     <div class="ui dropdown item">
+      <a id="student"><i class="users icon  fs-6"></i>
+        Student
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-student">
+         <a class="item fs-6">Student Type</a>
+         <a class="item fs-6">Student Group</a>
+         <a class="item fs-6">Manage Student</a>
+         <a class="item fs-6">Admit Student</a>
+         <a class="item fs-6">Advanced Admission</a>
+         <a class="item fs-6">Bulk Admission</a>
+        
+        
+       </div>
+     </div>
+    
+     <div class="ui dropdown item">
+      <a id="card"><i class="id card icon  fs-6"></i>
+        Generate ID Card
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-card">
+         <a class="item fs-6">ID Card Settings</a>
+         <a class="item fs-6">Teacher ID Settings</a>
+         <a class="item fs-6">Employee ID Card</a>
+         <a class="item fs-6">Student ID Card</a>
+         <a class="item fs-6">Admit Card Settings</a>
+         <a class="item fs-6">Student Admit Card</a>
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="attendance"><i class="id card icon  fs-6"></i>
+       Attendance
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-attendance">
+         <a class="item fs-6">Student Attendance</a>
+         <a class="item fs-6">Teacher Attendance</a>
+         <a class="item fs-6">Employee Attendance</a>
+         <a class="item fs-6">Absent Email</a>
+         <a class="item fs-6">Absent Sms</a>
+       
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="assignment"><i class="id card icon  fs-6"></i>
+    Assignment
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-assignment">
+         <a class="item fs-6">Student Attendance</a>
+         <a class="item fs-6">Teacher Attendance</a>
+        
+       
+        
+        
+       </div>
+     </div>
+
+
+
+     <div class="ui dropdown item">
+      <a id="exam"><i class="id card icon  fs-6"></i>
+    Exam
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-exam">
+         <a class="item fs-6">Exam Grade </a>
+         <a class="item fs-6">Exam Term</a>
+    
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="schedule"><i class="id card icon  fs-6"></i>
+    Exam Schedule
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-schedule">
+         <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+    
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="suggestion"><i class="id card icon  fs-6"></i>
+  Exam Suggestion
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-suggestion">
+        <a class="item fs-6">Class Class 1</a>
+         <a class="item fs-6">Class Class 2</a>
+        
+       
+        
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="mark"><i class="id card icon  fs-6"></i>
+  Exam Mark
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-mark">
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+      
+       </div>
+     </div>
+     <div class="ui item">
+      <a id="icon-share"> <i class="share icon fs-6"></i>Class
+       
+       </a>
+       </div>
+       <div class="ui dropdown item">
+        <a id="certificate"><i class="certificate icon  fs-6"></i>
+   Certificate
+         <i class="dropdown icon"></i>
+         </a>
+         <div class="menu-certificate">
+          <a class="item fs-6">Certificate Type </a>
+           <a class="item fs-6">Generate Certificate</a>
+          
+        
+         </div>
+       </div>
+       <div class="ui dropdown item">
+        <a id="book"><i class="book icon  fs-6"></i>
+   Library
+         <i class="dropdown icon"></i>
+         </a>
+         <div class="menu-book">
+          <a class="item fs-6">Book </a>
+           <a class="item fs-6">Library Member</a>
+           <a class="item fs-6">Issue and Return </a>
+           <a class="item fs-6">E-book</a>
+          
+        
+         </div>
+       </div>
+    </a>
+    <div class="ui dropdown item">
+      <a id="bus"><i class="bus icon  fs-6"></i>
+ Transport
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-bus">
+        <a class="item fs-6">Vehicle </a>
+         <a class="item fs-6">Manage Route</a>
+         <a class="item fs-6">Transport Member </a>
+     
+        
+      
+       </div>
+     </div>
+
+     <div class="ui dropdown item">
+      <a id="hostel"><i class="bed icon fs-6"></i>
+        Hostel
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-hostel">
+        <a class="item fs-6">Manage Hostel </a>
+         <a class="item fs-6">Manage Room</a>
+         <a class="item fs-6">Hostel Member </a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="envelope open outline icon fs-6"></i> Message
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="envelope"><i class="envelope icon fs-6"></i>
+        Mail & Sms 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-envelope">
+        <a class="item fs-6">General Email </a>
+         <a class="item fs-6">General Sms</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="comment"><i class="comment outline icon fs-6"></i>
+        Complain 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-comment">
+        <a class="item fs-6">Complain Type </a>
+         <a class="item fs-6">Complain</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="news"><i class="bullhorn icon fs-6"></i>
+        Announcement 
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-news">
+        <a class="item fs-6">Notice  </a>
+         <a class="item fs-6">News</a>
+         <a class="item fs-6">Holiday</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="icon"> <i class="calendar check outline icon fs-6"></i>Events
+       
+       </a>
+       
+     </div>
+     <div class="ui dropdown item">
+      <a id="payroll"><i class="money bill alternate icon fs-6"></i>
+        Payroll
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-payroll">
+        <a class="item fs-6">Salary Grade </a>
+         <a class="item fs-6">Salary Payment</a>
+         <a class="item fs-6">Payment History</a>
+        
+       </div>
+     </div>
+   
+     <div class="ui dropdown item">
+      <a id="account"><i class="money bill alternate icon fs-6"></i>
+        Accounting
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-account">
+        <a class="item fs-6">Discount </a>
+         <a class="item fs-6">Fee Type</a>
+         <a class="item fs-6">Fee Collection</a>
+         <a class="item fs-6">Manage Invoice </a>
+         <a class="item fs-6">Due Fee</a>
+         <a class="item fs-6">Print Multi Invoice</a>
+         <a class="item fs-6">Due Fee Email </a>
+         <a class="item fs-6">Due Fee Sms</a>
+         <a class="item fs-6">Income Head</a>
+         <a class="item fs-6">Income </a>
+         <a class="item fs-6">Expenditure Head</a>
+         <a class="item fs-6">Expenditure</a>
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="report"><i class="id card icon  fs-6"></i>
+  Report
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-report">
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+         <a class="item fs-6">Manage Mark </a>
+        <a class="item fs-6">Manage Mark </a>
+         <a class="item fs-6">Exam Term Result</a>
+         <a class="item fs-6">Exam Final Result</a>
+         <a class="item fs-6">Exam Merit List</a>
+         <a class="item fs-6">Student Mark Sheet</a>
+         <a class="item fs-6">Student Result Card</a>
+         <a class="item fs-6">All Result Card</a>
+         <a class="item fs-6">Mark Sent By Email</a>
+         <a class="item fs-6">Result Email</a>
+         <a class="item fs-6">Result Sms</a>
+      
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="gallery"><i class="tag icon"></i>
+        Media Gallery
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-gallery">
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="frontend"><i class="tag icon"></i>
+      Frontend
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-frontend">
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+         <a class="item fs-6">Manage Gallery</a>
+         <a class="item fs-6">Manage Gallery Image</a>
+        
+       </div>
+     </div>
+     <div class="ui dropdown item">
+      <a id="profile"><i class="tag icon"></i>
+    Profile
+       <i class="dropdown icon"></i>
+       </a>
+       <div class="menu-profile">
+         <a class="item fs-6">Profile</a>
+         <a class="item fs-6">Reset Password</a>
+         <a class="item fs-6">Complain</a>
+         <a class="item fs-6">Leave</a>
+         <a class="item fs-6">Logout</a>
+        
+       </div>
+     </div>
+  </div>
+
+    <div class="pusher">
+      <div class="ui basic segment">
+        <h3 class="ui header">  <i class="users icon"></i>Manage Teachers</h3>
+        <div class="ui segment">
+        <label>Quick Link:</label><!--i will add breadcrumb here-->
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="teachers"><i class="list ol icon"></i>Teacher's List</a>
+            <a class=" item" data-tab="add"><i class="plus square outline icon"></i>Add Teachers</a>
+        </div>
+        
+        <div class="ui bottom attached active tab segment " data-tab="teachers">
+<div class="table-responsive">
+          <table class="table caption-top">
+            <caption>List of Teachers</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Responsibility</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Joined</th>
+                <th scope="col">Is view on web?</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+           
+            <tbody>
+              {% for teacher in teachers %}
+              <tr>
+                <th scope="row">{{teacher.id}}</th>
+                <td><img src="{{teacher.avatar.url}}" class="img-thumbnail" alt="..." width=200 height=200></td>
+                <td>{{teacher.user.get_full_name}}</td>
+                <td>{{teacher.position_class}}</td>
+                <td>N/A</td>
+                <td>{{teacher.user}}</td>
+                <td>{{teacher.user.date_joined}}</td>
+                <td>Yes</td>
+                <td><div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Action
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Edit</a></li>
+      <li><a class="dropdown-item" ><i class="fa-solid fa-eye"></i> View</a></li>
+      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+    </ul>
+  </div>
+</td>
+              </tr>
+             {% endfor %}
+            
+            </tbody>
+          </table>
+        </div> 
+          </div> 
+        <div class="ui bottom attached tab segment" data-tab="add">
+          <form class="ui form" method="post">
+             {% csrf_token %}
+            {{ form.non_field_errors }}
+            <h4 class="ui dividing header">Basic Information</h4>
+            <div class="field">
+              
+              <div class="field">
+                {{form.user.errors}}
+                <label>Name</label>
+                <div class="field">
+                  {{form.user}}
+                </div>
+
+                <div class="field">
+                  {{form.National_id.errors}}
+                  <label>National ID</label>
+                  {{form.National_id}}
+                </div>
+
+                <div class="field">
+                  {{form.gender_id.errors}}
+                  <label>Gender</label>
+                  {{form.gender}}
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div class="field">
+              {{form.position_class.errors}}
+              <label>Responsibility</label>
+              <div class="fields">
+                <div class="twelve wide field">
+                 {{form.position_class}}
+                </div>
+                <div class="four wide field">
+                  {{form.phone.errors}}
+                 
+                 {{form.phone}}
+                </div>
+              </div>
+            </div>
+
+            <div class="fields">
+              <div class="field">
+                {{form.blood_group.errors}}
+                <label>Blood Group</label>
+                {{form.blood_group}}
+            
+              </div>
+              <div class="field">
+                {{form.country.errors}}
+                <label>Country</label>
+                {{form.country}}
+          
+              </div>
+              <div class="field">
+                {{form.date_of_birth.errors}}
+                <label>Date Of Birth</label>
+                {{form.date_of_birth}}
+          
+              </div>
+            
+            </div>
+
+            <div class="field">
+              {{form.date_of_birth.errors}}
+              <label>Present Address</label>
+              {{form.present_address}}
+            </div>
+
+            <div class="field">
+              {{form.permanent.errors}}
+              <label>Permanent Address</label>
+              {{form.permanent_address}}
+            </div>
+
+            <h4 class="ui dividing header">Academic Information</h4>
+            <div class="fields">
+              <div class="field">
+                {{form.role.errors}}
+                <label>Role</label>
+                {{form.role}}
+            
+              </div>
+              <div class="field">
+                {{form.salary_grade.errors}}
+                <label>Salary Grade</label>
+                {{form.salary_grade}}
+          
+              </div>
+              <div class="field">
+                {{form.salary_type.errors}}
+                <label>Salary Type</label>
+                {{form.salary_type}}
+          
+              </div>
+              <div class="field">
+                {{form.avatar.errors}}
+                <label>Teacher's Picture</label>
+                {{form.avatar}}
+          
+              </div>
+            
+            </div>
+
+             
+            <button class="ui button" type="submit">
+              Add Teacher
+            </button>
+          </form>
+        </div>
+       <script>
+           $('.menu .item').tab();
+       </script>
+      </div>
+    </div>
+
+
+    
+  </div>
+ 
+  {% endblock %}
+
+
+  <a class="item">
+    <i class="wrench icon"></i>
+   
+    Settings <i class="dropdown icon"></i>
+    </a>

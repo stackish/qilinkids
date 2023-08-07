@@ -1,0 +1,94 @@
+{% extends 'event/detail.html' %}
+
+
+{% block carousel %}
+<div class="container-fluid bread d-flex justify-content-center">
+    <div class="pb-2 pt-2" >
+    <h2 class=" text-white  text-capitalize  fw-bold text-decoration-underline display-1">{{title}}</h2>
+
+    <div class="ui massive breadcrumb ">
+        <a class="section text-white text-decoration-none" href="{% url 'base' %}">Home</a>
+        <i class="right chevron icon divider  text-white"></i>
+        <a class="section text-white text-decoration-none" href="{% url 'news' %}">News</a>
+        <i class="right chevron icon divider  text-white"></i>
+        <div class="active section text-white">{{title}}</div>
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block information %}
+
+<div class="container">
+<div class="row mt-4">
+    <div class="col-sm-8">
+    <div class="card mb-3">
+  <img src={{object.image.url}} class="card-img-top" alt="...">
+   <div class="content p-3">
+   
+<div class="meta p-2 d-flex justify-content-around">
+    <a class="fs-5 text-decoration-none"><i class="fa-solid fa-user"></i> {{object.users}}</a>
+    <a class="fs-5 text-decoration-none"><i class="fa-solid fa-calendar"></i> {{object.date}} </a>
+</div> 
+<br>
+ <h5 class="header h2">{{object.title}}</h5>
+
+ 
+   </div>
+  <div class="card-body">
+  
+    <p class="card-text fs-5 lh-lg">{{object.description}}</p>
+  </div>
+</div><!--card ends here-->
+
+</div>
+{% if objects %}
+<div class="col-sm-4">
+<h5 class="text-center h3">Latest Events</h5><hr>
+{% for obj in objects %}
+
+<hr>
+ <div class="card mb-4 border-0 ">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src={{obj.image.url}} class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title"><a title={{obj.title}} class="text-decoration-none" href="{% url 'news-details' obj.slug %}">{{obj.title|truncatewords:"3"}}</a></h5>
+         <div class="content ">
+        
+        <div class="meta p-2">
+          <a class="fs-6 text-decoration-none"><i class="fa-solid fa-user"></i> {{obj.users}} </a>
+        </div>
+       
+          <div class="meta p-2">
+          <a class="fs-6 text-decoration-none"><i class="fa-solid fa-calendar"></i> {{obj.date}} </a>
+          </div>
+
+       
+         
+      </div>
+      </div>
+    </div>
+  </div>
+ </div>
+<hr>
+{% endfor %}
+
+
+</div>
+{% endif %}
+
+
+
+
+</div>
+<!--row-->
+</div>
+<!--container-->
+{% endblock %}

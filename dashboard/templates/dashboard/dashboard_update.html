@@ -1,0 +1,375 @@
+{% extends 'dashboard/homepage.html' %}
+{% load static %}
+
+{% block menu %}
+<div class="ui top attached demo menu">
+    <a class="item main">
+      <i class="sidebar icon"></i>
+      Menu
+    </a>
+    <a  class="item" href="{% url 'dashboard' %}">
+   Dashboard
+    </a>
+  <a class="item" href="{% url 'teacher_dashboard' %}">
+    Teacher
+  </a>
+
+  <a href="{% url 'base' %}" class="item">
+    <i class="globe icon"></i>
+  </a>
+  </div>
+  <div class="ui bottom attached segment pushable">
+    <div class="ui inverted labeled icon left inline vertical sidebar menu" style="">
+      <a class="item">
+        <i class="boxes icon"></i>  Dashboard
+      
+      </a>
+      <a class="item">
+        <i class="wrench icon"></i>
+      Settings
+      </a>
+      <a class="item">
+        <i class="smile icon"></i>
+        Theme
+      </a>
+      <a class="item">
+        <i class="assistive listening systems icon"></i>
+        Language
+      </a>
+      <a class="item">
+        <i class="user icon"></i>
+        Administrator
+      </a>
+     
+      <a class="item">
+        <i class="tag icon"></i>
+        Template
+      </a>
+      <a class="item">
+        <i class="tty icon"></i>
+        Front Office
+      </a>
+      <a class="item">
+        <i class="user outline icon"></i>
+        Human Resources
+      </a>
+      <a class="item">
+        <i class="sign out alternate icon"></i>
+        Leave
+      </a>
+      <a class="item" href="{% url 'teacher_dashboard' %}">
+        <i class="users icon"></i>
+        Teacher
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        class
+      </a>
+      <a class="item">
+        <i class="bars icon"></i>
+        Section
+      </a>
+      <a class="item">
+        <i class="folder open icon"></i>
+        Subject
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Syllabus
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Material
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+      Class Routine
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+       Guardian
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Student
+      </a>
+      <a class="item" href="{% url 'card-generate' %}" >
+        <i class="id card outline icon"></i>
+       Generate Card
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Attendance
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Assignment
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Exams
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Exam Schedule
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Exam Suggestion
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Exam Mark
+      </a>
+      <a class="item">
+        <i class="share icon"></i>
+        Promotion
+      </a>
+      <a class="item">
+        <i class="certificate icon"></i>
+        Certificate
+      </a>
+      <a class="item">
+        <i class="book icon"></i>
+        library
+      </a>
+      <a class="item">
+        <i class="bus icon"></i>
+        Transport
+      </a>
+      <a class="item">
+        <i class="bed icon"></i>
+        Hostel 
+      </a>
+      <a class="item">
+        <i class="envelope open outline icon"></i>
+        Message
+      </a>
+      <a class="item">
+        <i class="envelope icon"></i>
+        Mail & Sms
+      </a>
+      <a class="item">
+        <i class="comment outline icon"></i>
+        Complain
+      </a>
+      <a class="item">
+        <i class="bullhorn icon"></i>
+        Announcement
+      </a>
+      <a class="item">
+        <i class="calendar check outline icon"></i>
+        Event
+      </a>
+      <a class="item">
+        <i class="money bill alternate icon"></i>
+        Payroll
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Exam Mark
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Accounting 
+      </a>
+      <a class="item">
+        <i class="calendar icon"></i>
+        Report
+      </a>
+      <a class="item">
+        <i class="image icon"></i>
+        Media Gallery
+      </a>
+      <a class="item">
+        <i class="tv icon"></i>
+        Frontend
+      </a>
+      <a class="item">
+        <i class="lock icon"></i>
+        Profile
+      </a>
+    </div>
+    <div class="pusher">
+      <div class="ui basic segment">
+        <h3 class="ui header">  <i class="users icon"></i>Manage Teachers</h3>
+        <div class="ui segment">
+        <label>Quick Link:</label><!--i will add breadcrumb here-->
+        <div class="ui top attached tabular menu">
+            <a class="active item" data-tab="teachers"><i class="list ol icon"></i>Teacher's List</a>
+            <a class=" item" data-tab="add"><i class="plus square outline icon"></i>Add Teachers</a>
+        </div>
+        
+        <div class="ui bottom attached active tab segment " data-tab="teachers">
+<div class="table-responsive">
+          <table class="table caption-top">
+            <caption>List of Teachers</caption>
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Photo</th>
+                <th scope="col">Name</th>
+                <th scope="col">Responsibility</th>
+                <th scope="col">Phone</th>
+                <th scope="col">Email</th>
+                <th scope="col">Date Joined</th>
+                <th scope="col">Is view on web?</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+           
+            <tbody>
+              {% for teacher in teachers %}
+              <tr>
+                <th scope="row">{{teacher.id}}</th>
+                <td><img src="{{teacher.avatar.url}}" class="img-thumbnail" alt="..." width=200 height=200></td>
+                <td>{{teacher.user.get_full_name}}</td>
+                <td>{{teacher.position_class}}</td>
+                <td>N/A</td>
+                <td>{{teacher.user}}</td>
+                <td>{{teacher.user.date_joined}}</td>
+                <td>Yes</td>
+                <td><div class="btn-group" role="group">
+    <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+      Action
+    </button>
+    <ul class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-pen-to-square"></i> Edit</a></li>
+      <li><a class="dropdown-item" ><i class="fa-solid fa-eye"></i> View</a></li>
+      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-trash"></i> Delete</a></li>
+    </ul>
+  </div>
+</td>
+              </tr>
+             {% endfor %}
+            
+            </tbody>
+          </table>
+        </div> 
+          </div> 
+        <div class="ui bottom attached tab segment" data-tab="add">
+          <form class="ui form" method="post">
+             {% csrf_token %}
+            {{ form.non_field_errors }}
+            <h4 class="ui dividing header">Basic Information</h4>
+            <div class="field">
+              
+              <div class="field">
+                {{form.user.errors}}
+                <label>Name</label>
+                <div class="field">
+                  {{form.user}}
+                </div>
+
+                <div class="field">
+                  {{form.National_id.errors}}
+                  <label>National ID</label>
+                  {{form.National_id}}
+                </div>
+
+                <div class="field">
+                  {{form.gender_id.errors}}
+                  <label>Gender</label>
+                  {{form.gender}}
+                </div>
+
+
+              </div>
+            </div>
+
+
+            <div class="field">
+              {{form.position_class.errors}}
+              <label>Responsibility</label>
+              <div class="fields">
+                <div class="twelve wide field">
+                 {{form.position_class}}
+                </div>
+                <div class="four wide field">
+                  {{form.phone.errors}}
+                 
+                 {{form.phone}}
+                </div>
+              </div>
+            </div>
+
+            <div class="fields">
+              <div class="field">
+                {{form.blood_group.errors}}
+                <label>Blood Group</label>
+                {{form.blood_group}}
+            
+              </div>
+              <div class="field">
+                {{form.country.errors}}
+                <label>Country</label>
+                {{form.country}}
+          
+              </div>
+              <div class="field">
+                {{form.date_of_birth.errors}}
+                <label>Date Of Birth</label>
+                {{form.date_of_birth}}
+          
+              </div>
+            
+            </div>
+
+            <div class="field">
+              {{form.date_of_birth.errors}}
+              <label>Present Address</label>
+              {{form.present_address}}
+            </div>
+
+            <div class="field">
+              {{form.permanent.errors}}
+              <label>Permanent Address</label>
+              {{form.permanent_address}}
+            </div>
+
+            <h4 class="ui dividing header">Academic Information</h4>
+            <div class="fields">
+              <div class="field">
+                {{form.role.errors}}
+                <label>Role</label>
+                {{form.role}}
+            
+              </div>
+              <div class="field">
+                {{form.salary_grade.errors}}
+                <label>Salary Grade</label>
+                {{form.salary_grade}}
+          
+              </div>
+              <div class="field">
+                {{form.salary_type.errors}}
+                <label>Salary Type</label>
+                {{form.salary_type}}
+          
+              </div>
+              <div class="field">
+                {{form.avatar.errors}}
+                <label>Teacher's Picture</label>
+                {{form.avatar}}
+          
+              </div>
+            
+            </div>
+
+             
+            <button class="ui button" type="submit">
+              Add Teacher
+            </button>
+          </form>
+        </div>
+       <script>
+           $('.menu .item').tab();
+       </script>
+      </div>
+    </div>
+
+
+    
+  </div>
+ 
+  {% endblock %}
