@@ -1,6 +1,8 @@
 {% extends 'event/index.html' %}
 
-
+{% block link-event %}
+            <a href="{% url 'event' %}" class="btn btn-secondary mb-1">Event</a>
+           {% endblock link-event %}
 
 {% block information %}
 <div class="container ">
@@ -37,8 +39,8 @@
    
   </div>
   {% else %}
-  
-  <div class="ui card mt-5">
+  <div class="row justify-content-center align-items-center" >
+    <div class="ui card mt-5 text-center" style="width: 80%;">
     <div class="content">
       <div class="header">No Data</div>
       <div class="meta">
@@ -47,6 +49,7 @@
       </div>
       <p></p>
     </div>
+  </div>
   </div>
 
   <!--card ends here-->

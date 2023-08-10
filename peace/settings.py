@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-vhk78sl$$n7%u=4c300c7lt%%5qtiw+l+6^li@_se@4xc_b3un'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG =False
+DEBUG =True
 
 #ALLOWED_HOSTS = ['qilin-cli.herokuapp.com','127.0.0.1','www.qilinkids.com','qilinkids.com']
 #ALLOWED_HOSTS = ['127.0.0.1']
